@@ -1,0 +1,48 @@
+import java.awt.Color;
+import java.awt.Graphics;
+import javax.swing.JFrame;
+import javax.swing.JComponent;
+public class Tree
+{
+    public static void draw (Graphics g)
+    {
+       Color Green = new Color(0,200,122);
+       Color Brown = new Color(125,50,0);
+       Color Yellow = new Color(249,237,11);
+       //Color Blue = new 
+       g.setColor(Green);
+       g.fillPolygon(new int[] { 300, 350, 250 },
+       new int[] { 200, 300, 300 }, 3);
+      
+       g.fillPolygon(new int[] { 300, 350, 250 },
+       new int[] { 300, 400, 400 }, 3);
+       g.setColor(Brown);
+       g.fillRect(275,400,50,100);
+       Color Red = new Color(225,0,0);
+       g.setColor(Red);
+       g.fillOval(295,195,10,10);
+       g.fillOval(345,295,10,10);
+       g.fillOval(245,295,10,10);
+       g.fillOval(345,345,10,10);
+       g.fillOval(245,345,10,10);
+       g.fillOval(345,395,10,10);
+       g.fillOval(245,395,10,10);
+    }
+      public static void main(String[] args)
+    {
+        JFrame frame = new JFrame();
+        final int FRAME_WIDTH = 1000;
+        final int FRAME_HIGHT = 1000;
+        frame.setSize(FRAME_WIDTH, FRAME_HIGHT);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JComponent component = new JComponent()
+        {
+              public void paintComponent(Graphics graph)
+            {
+                  draw(graph);
+            }
+        };
+        frame.add(component);
+        frame.setVisible(true);
+    }
+}
